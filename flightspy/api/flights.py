@@ -15,7 +15,7 @@ class Flight(object):
 
     def _serialize(self):
         """
-        Should take flight parameters and return them in clean json format
+        Should take flight parameters and return them in json format
         """
         return json.dumps({
             'request': {
@@ -35,9 +35,8 @@ class Flight(object):
     def _request(self, data):
         """
         Should take serialized data, hit the QPX API, and return the 
-        minimum price of a flight with the given parameters
+        text of the json response as a dict
         """
-
         url = 'https://www.googleapis.com/qpxExpress/v1/trips/search'
         key = os.environ.get('QPX_API_KEY')
         r = requests.post(
