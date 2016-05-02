@@ -2,31 +2,51 @@
 from cement.core.foundation import CementApp
 from cement.core.controller import CementBaseController, expose
 
-class BaseController(CementBaseController):
+class FlightspyBaseController(CementBaseController):
     class Meta:
         label = 'base'
-        description = 'Cool times with this app'
+        description = 'Get and process data from Google\'s flight API'
         arguments = [
-            (['-f', '--foo'],
-                dict(action='store', help='foo'))
+            (['-f', '--fuzzy'],
+                dict(action='store', 
+                    help='NOT IMPLEMENTED: Return flights within a range of 
+                        the date.'))
         ]
 
     @expose(hide=True)
     def default(self):
-        self.app.log.info('Inside BaseController.default()')
-        if self.app.pargs.foo:
-            print('Received option foo => {foo}'.format(foo=self.app.pargs.foo))
+        self.app.args.print_help()
 
-    @expose(help='Useless command')
-    def command1(self):
-        self.app.log.info('command1() called')
+    @expose(help='Get flight data from QPX')
+    def get(self):
+        """
+        ``flightspy get <from> <to> <date>``
 
-class App(CementApp):
+        Returns flight data for the given parameters
+
+        Command:
+
+        ..code:: bash
+            
+            flightspy get LAX CLT 2016-08-10
+
+        Example output:
+
+        .. csv-table:
+            carrier,flightnumber,departuretime,arrivaltime,price,route
+            Delta,1234,2016-08-10T17:17:42Z,410USD,LAX-IAD-CLT
+        """
+        flight = Flight()
+
+class FlightApp(CementApp):
     class Meta:
-        label = 'myapp'
-        base_controller = 'base'
-        handlers = [BaseController]
+        label = 'app'
+        base_controller = FlightspyBaseController
+        extensions = [
+            'flightspy.cli.ext_csv'        
+        ]
+        output_handler = 'csv'
 
 def main(): 
-    with App() as app:
+    with FlightApp() as app:
         app.run()
