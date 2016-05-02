@@ -7,18 +7,20 @@ class Flight(object):
     """
     'origin': 'from IATA code e.g. LAX',
     'to': 'to IATA code e.g. CLT',
-    'depart': 'departure date in format YYYY-MM-DD',
+    'date': 'departure date in format YYYY-MM-DD',
     'passengers': 'count of adult passengers'
     """
-    def __init__(self, origin, to, depart, passengers=1):
+    def __init__(self, origin, to, date, passengers=1):
 
         self.origin = origin
         self.to = to
-        self.depart = depart
+        self.date = date
         self.passengers = passengers
 
         serialized_data = self._serialize()
         response = self._request(serialized_data)
+
+        self.price = response['trips']['tripOption'][0]['saleTotal']
         
 
     def _serialize(self):
@@ -35,7 +37,7 @@ class Flight(object):
                     {
                         'origin': self.origin,
                         'destination': self.to,
-                        'date': self.depart
+                        'date': self.date
                     }    
                 ]
             }

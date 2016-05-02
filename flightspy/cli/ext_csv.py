@@ -12,4 +12,3 @@ class CSVOutputHandler(output.CementOutputHandler):
     
     def render(self, data):
         writer = csv.writer(sys.stdout, lineterminator='\n')
-        for 

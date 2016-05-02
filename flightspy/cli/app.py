@@ -1,4 +1,6 @@
 #!/usr/bin/python
+from flightspy.api import flights
+from flightspy.cli.hooks import add_flight_hook
 from cement.core.foundation import CementApp
 from cement.core.controller import CementBaseController, expose
 
@@ -7,10 +9,15 @@ class FlightspyBaseController(CementBaseController):
         label = 'base'
         description = 'Get and process data from Google\'s flight API'
         arguments = [
-            (['-f', '--fuzzy'],
+           (['-d', '--date'],
                 dict(action='store', 
-                    help='NOT IMPLEMENTED: Return flights within a range of 
-                        the date.'))
+                    help='Specify departure date')),
+           (['-t', '--to'],
+                dict(action='store', 
+                    help='Specify the IATA code of destination airport')),
+           (['-o', '--origin'],
+                dict(action='store', 
+                    help='Specify the IATA code of origin airport')),
         ]
 
     @expose(hide=True)
@@ -20,7 +27,7 @@ class FlightspyBaseController(CementBaseController):
     @expose(help='Get flight data from QPX')
     def get(self):
         """
-        ``flightspy get <from> <to> <date>``
+        ``flightspy get -f <from> -t <to> -d <date>``
 
         Returns flight data for the given parameters
 
@@ -36,16 +43,15 @@ class FlightspyBaseController(CementBaseController):
             carrier,flightnumber,departuretime,arrivaltime,price,route
             Delta,1234,2016-08-10T17:17:42Z,410USD,LAX-IAD-CLT
         """
-        flight = Flight()
+        print self.app.flight.price
 
 class FlightApp(CementApp):
     class Meta:
         label = 'app'
         base_controller = FlightspyBaseController
-        extensions = [
-            'flightspy.cli.ext_csv'        
+        hooks = [
+            ('post_argument_parsing', add_flight_hook),        
         ]
-        output_handler = 'csv'
 
 def main(): 
     with FlightApp() as app:

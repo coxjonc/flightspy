@@ -1,4 +1,4 @@
-README
+README.rst
 setup.py
 flightspy/__init__.py
 flightspy.egg-info/PKG-INFO
