@@ -3,12 +3,12 @@
 A python wrapper for the QPX cheap flights API.
 """
 
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name='flightspy',
     version='0.1dev',
-    packages='flightspy',
+    packages=['flightspy'],
     description='A wrapper for the Google cheap flights API',
     entry_points = {
         'console_scripts': (

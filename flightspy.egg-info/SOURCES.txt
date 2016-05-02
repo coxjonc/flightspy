@@ -1,0 +1,8 @@
+README
+setup.py
+flightspy/__init__.py
+flightspy.egg-info/PKG-INFO
+flightspy.egg-info/SOURCES.txt
+flightspy.egg-info/dependency_links.txt
+flightspy.egg-info/entry_points.txt
+flightspy.egg-info/top_level.txt
