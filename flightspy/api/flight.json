@@ -1,0 +1,236 @@
+{
+    "kind": "qpxExpress#tripsSearch", 
+    "trips": {
+        "data": {
+            "aircraft": [
+                {
+                    "code": "738", 
+                    "kind": "qpxexpress#aircraftData", 
+                    "name": "Boeing 737"
+                }, 
+                {
+                    "code": "739", 
+                    "kind": "qpxexpress#aircraftData", 
+                    "name": "Boeing 737"
+                }
+            ], 
+            "airport": [
+                {
+                    "city": "CLT", 
+                    "code": "CLT", 
+                    "kind": "qpxexpress#airportData", 
+                    "name": "Charlotte Douglas International"
+                }, 
+                {
+                    "city": "LAX", 
+                    "code": "LAX", 
+                    "kind": "qpxexpress#airportData", 
+                    "name": "Los Angeles International"
+                }, 
+                {
+                    "city": "CHI", 
+                    "code": "ORD", 
+                    "kind": "qpxexpress#airportData", 
+                    "name": "Chicago O'Hare"
+                }
+            ], 
+            "carrier": [
+                {
+                    "code": "UA", 
+                    "kind": "qpxexpress#carrierData", 
+                    "name": "United Airlines, Inc."
+                }
+            ], 
+            "city": [
+                {
+                    "code": "CHI", 
+                    "kind": "qpxexpress#cityData", 
+                    "name": "Chicago"
+                }, 
+                {
+                    "code": "CLT", 
+                    "kind": "qpxexpress#cityData", 
+                    "name": "Charlotte"
+                }, 
+                {
+                    "code": "LAX", 
+                    "kind": "qpxexpress#cityData", 
+                    "name": "Los Angeles"
+                }
+            ], 
+            "kind": "qpxexpress#data", 
+            "tax": [
+                {
+                    "id": "ZP", 
+                    "kind": "qpxexpress#taxData", 
+                    "name": "US Flight Segment Tax"
+                }, 
+                {
+                    "id": "AY_001", 
+                    "kind": "qpxexpress#taxData", 
+                    "name": "US September 11th Security Fee"
+                }, 
+                {
+                    "id": "US_001", 
+                    "kind": "qpxexpress#taxData", 
+                    "name": "US Transportation Tax"
+                }, 
+                {
+                    "id": "XF", 
+                    "kind": "qpxexpress#taxData", 
+                    "name": "US Passenger Facility Charge"
+                }
+            ]
+        }, 
+        "kind": "qpxexpress#tripOptions", 
+        "requestId": "F69GKvHDsDQxJNBtY0OGDV", 
+        "tripOption": [
+            {
+                "id": "fQbUXGuWNWQPicc1CEvfKS001", 
+                "kind": "qpxexpress#tripOption", 
+                "pricing": [
+                    {
+                        "baseFareTotal": "USD213.95", 
+                        "fare": [
+                            {
+                                "basisCode": "SAA21AXN", 
+                                "carrier": "UA", 
+                                "destination": "CLT", 
+                                "id": "AAJHQNzly+qKlQeNsyr8bAb5vOWlkSvTjk2HP+AHxpv/", 
+                                "kind": "qpxexpress#fareInfo", 
+                                "origin": "LAX"
+                            }
+                        ], 
+                        "fareCalculation": "LAX UA X/CHI UA CLT 213.95SAA21AXN USD 213.95 END ZP LAX ORD XT 16.05US 8.00ZP 5.60AY 9.00XF LAX4.50 ORD4.50", 
+                        "kind": "qpxexpress#pricingInfo", 
+                        "latestTicketingTime": "2016-05-03T23:59-04:00", 
+                        "passengers": {
+                            "adultCount": 1, 
+                            "kind": "qpxexpress#passengerCounts"
+                        }, 
+                        "ptc": "ADT", 
+                        "saleFareTotal": "USD213.95", 
+                        "saleTaxTotal": "USD38.65", 
+                        "saleTotal": "USD252.60", 
+                        "segmentPricing": [
+                            {
+                                "fareId": "AAJHQNzly+qKlQeNsyr8bAb5vOWlkSvTjk2HP+AHxpv/", 
+                                "kind": "qpxexpress#segmentPricing", 
+                                "segmentId": "GD3gMxxDoaezPfug"
+                            }, 
+                            {
+                                "fareId": "AAJHQNzly+qKlQeNsyr8bAb5vOWlkSvTjk2HP+AHxpv/", 
+                                "kind": "qpxexpress#segmentPricing", 
+                                "segmentId": "GXuZog-iayE38ZMG"
+                            }
+                        ], 
+                        "tax": [
+                            {
+                                "chargeType": "GOVERNMENT", 
+                                "code": "US", 
+                                "country": "US", 
+                                "id": "US_001", 
+                                "kind": "qpxexpress#taxInfo", 
+                                "salePrice": "USD16.05"
+                            }, 
+                            {
+                                "chargeType": "GOVERNMENT", 
+                                "code": "AY", 
+                                "country": "US", 
+                                "id": "AY_001", 
+                                "kind": "qpxexpress#taxInfo", 
+                                "salePrice": "USD5.60"
+                            }, 
+                            {
+                                "chargeType": "GOVERNMENT", 
+                                "code": "XF", 
+                                "country": "US", 
+                                "id": "XF", 
+                                "kind": "qpxexpress#taxInfo", 
+                                "salePrice": "USD9.00"
+                            }, 
+                            {
+                                "chargeType": "GOVERNMENT", 
+                                "code": "ZP", 
+                                "country": "US", 
+                                "id": "ZP", 
+                                "kind": "qpxexpress#taxInfo", 
+                                "salePrice": "USD8.00"
+                            }
+                        ]
+                    }
+                ], 
+                "saleTotal": "USD252.60", 
+                "slice": [
+                    {
+                        "duration": 437, 
+                        "kind": "qpxexpress#sliceInfo", 
+                        "segment": [
+                            {
+                                "bookingCode": "S", 
+                                "bookingCodeCount": 9, 
+                                "cabin": "COACH", 
+                                "connectionDuration": 54, 
+                                "duration": 253, 
+                                "flight": {
+                                    "carrier": "UA", 
+                                    "number": "2039"
+                                }, 
+                                "id": "GD3gMxxDoaezPfug", 
+                                "kind": "qpxexpress#segmentInfo", 
+                                "leg": [
+                                    {
+                                        "aircraft": "738", 
+                                        "arrivalTime": "2016-08-07T15:05-05:00", 
+                                        "departureTime": "2016-08-07T08:52-07:00", 
+                                        "destination": "ORD", 
+                                        "destinationTerminal": "1", 
+                                        "duration": 253, 
+                                        "id": "LKIaAdfXgwxvwNXC", 
+                                        "kind": "qpxexpress#legInfo", 
+                                        "meal": "Food for Purchase", 
+                                        "mileage": 1740, 
+                                        "onTimePerformance": 80, 
+                                        "origin": "LAX", 
+                                        "originTerminal": "7", 
+                                        "secure": true
+                                    }
+                                ], 
+                                "marriedSegmentGroup": "0"
+                            }, 
+                            {
+                                "bookingCode": "S", 
+                                "bookingCodeCount": 9, 
+                                "cabin": "COACH", 
+                                "duration": 130, 
+                                "flight": {
+                                    "carrier": "UA", 
+                                    "number": "221"
+                                }, 
+                                "id": "GXuZog-iayE38ZMG", 
+                                "kind": "qpxexpress#segmentInfo", 
+                                "leg": [
+                                    {
+                                        "aircraft": "739", 
+                                        "arrivalTime": "2016-08-07T19:09-04:00", 
+                                        "departureTime": "2016-08-07T15:59-05:00", 
+                                        "destination": "CLT", 
+                                        "duration": 130, 
+                                        "id": "LEBJCXe3QeVcPCz7", 
+                                        "kind": "qpxexpress#legInfo", 
+                                        "meal": "Food and Beverages for Purchase", 
+                                        "mileage": 599, 
+                                        "origin": "ORD", 
+                                        "originTerminal": "1", 
+                                        "secure": true
+                                    }
+                                ], 
+                                "marriedSegmentGroup": "0"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -43,7 +43,7 @@ class FlightspyBaseController(CementBaseController):
             carrier,flightnumber,departuretime,arrivaltime,price,route
             Delta,1234,2016-08-10T17:17:42Z,410USD,LAX-IAD-CLT
         """
-        print self.app.flight.price
+        self.app.render(data)
 
 class FlightApp(CementApp):
     class Meta:
@@ -52,6 +52,10 @@ class FlightApp(CementApp):
         hooks = [
             ('post_argument_parsing', add_flight_hook),        
         ]
+        extensions = [
+            'flightspy.cli.ext_json',
+        ]
+        output_handler = 'json'
 
 def main(): 
     with FlightApp() as app:

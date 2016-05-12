@@ -18,10 +18,7 @@ class Flight(object):
         self.passengers = passengers
 
         serialized_data = self._serialize()
-        response = self._request(serialized_data)
-
-        self.price = response['trips']['tripOption'][0]['saleTotal']
-        
+        self.response = self._request(serialized_data)
 
     def _serialize(self):
         """
@@ -39,7 +36,8 @@ class Flight(object):
                         'destination': self.to,
                         'date': self.date
                     }    
-                ]
+                ],
+                'solutions': '1'
             }
         })
 
@@ -49,10 +47,10 @@ class Flight(object):
         Google's QPX API.
 
         Should take serialized data, hit the QPX API, and return the 
-        text of the json response as a Python dict.
+        json response as a Python dict.
 
         Before making a request, set a QPX_API_KEY environmental 
-        variable with your API key.
+        variable to your API key.
         """
         url = 'https://www.googleapis.com/qpxExpress/v1/trips/search'
         key = os.environ.get('QPX_API_KEY')

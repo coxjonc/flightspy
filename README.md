@@ -1,20 +1,11 @@
 Flightspy
 ========
-A better python wrapper for Google's cheap flights API. Provides cli tools for getting pricing information about flights. 
+A simple python wrapper for Google's cheap flights API that lets you generate a CSV file with flight data from the command line.
 
 Installation
 ============
-I haven't uploaded this to PyPi yet. In the meantime, clone the repo and run `python setup.py install`.
+I haven't uploaded this to PyPi yet, but I plan to as soon as it's complete.
 
 Usage
 =====
-After installing the program, just run the following command in your bash shell:
-
-`$ flightspy get -d 2016-08-10 -t LAX -o CLT`
-
-Currently the program just prints the price of the flight to STDOUT, which isn't terribly useful, but I'm working on adding options to output a more complete set of data about flight options to a csv file or database.
-
-TODO
-====
-* Output data about possible flights to a .csv file.
-
+Currently the program just prints the price of the flight to STDOUT, which isn't terribly useful, but I'm working on a script that will output flight data to a CSV.
